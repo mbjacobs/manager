@@ -30,6 +30,7 @@ import { KubernetesClusterRow } from '../ClusterList/KubernetesClusterRow';
 import { DeleteKubernetesClusterDialog } from '../KubernetesClusterDetail/DeleteKubernetesClusterDialog';
 import { useKubernetesBetaEndpoint } from '../kubeUtils';
 import UpgradeVersionModal from '../UpgradeVersionModal';
+import { KubernetesClusterTable } from './KubernetesClusterTable';
 import { KubernetesEmptyState } from './KubernetesLandingEmptyState';
 
 import type { KubeNodePoolResponse, KubernetesTier } from '@linode/api-v4';
@@ -187,6 +188,7 @@ export const KubernetesLanding = () => {
         removeCrumbX={1}
         title="Kubernetes"
       />
+      <KubernetesClusterTable clusters={data?.data ?? []} />
       <Table aria-label="List of Your Kubernetes Clusters">
         <TableHead>
           <TableRow>
